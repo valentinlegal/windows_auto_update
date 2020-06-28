@@ -13,7 +13,8 @@ A Python script to automatically update the software and system for Windows.
 Please take note of the following warnings to avoid any problems:
 
 - Save your work and close all running software
-- Your PC will restart after the execution of the script is finished
+- Do not create new folders or files in the Desktop folder while the script is running (otherwise they will be deleted at the end of the script execution)
+- Your PC will automatically restart at the end of the script execution
 
 ## Running the script
 
@@ -35,5 +36,6 @@ Then to run the script:
 
  Version |    Date    | Description
 ---------|------------|-------------
+ 1.2.0   | 2020-06-28 | Creates a Windows restore point before updating
  1.1.0   | 2020-06-28 | Deletes new files created in the Desktop folder (shortcuts...) after updates
  1.0.0   | 2020-06-28 | The script can update the software and the system
