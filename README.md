@@ -7,6 +7,7 @@ A Python script to automatically update the software and system for Windows.
 - [Warnings](#warnings)
 - [Running the script](#running-the-script)
 - [Versions](#versions)
+- [License](#license)
 
 ## Warnings
 
@@ -15,6 +16,7 @@ Please take note of the following warnings to avoid any problems:
 - Save your work and close all running software
 - Do not create new folders or files in the Desktop folder while the script is running (otherwise they will be deleted at the end of the script execution)
 - Your PC will automatically restart at the end of the script execution
+- The script must be run with administrator rights
 
 ## Running the script
 
@@ -26,11 +28,13 @@ Before executing the script you must follow these instructions:
 - The following Python modules must be installed:
     - `pytest-shutil`
 - In the `auto_update.py` file:
-    - Change the `desktop_path` variable (the path to your Desktop folder) on line 10
+    - Change the `desktop_path` variable (the path to your Desktop folder) on line 7
+- Create a Windows shortcut with the target: `powershell.exe python C:\PATH\TO\THE\SCRIPT\auto_update.py`
+- Make the shortcut executable with administrator rights
 
 Then to run the script:
 
-- The script must be run with administrator rights
+- Double click on the previously created shortcut
 
 ## Versions
 
@@ -39,3 +43,7 @@ Then to run the script:
  1.2.0   | 2020-06-28 | Creates a Windows restore point before updating
  1.1.0   | 2020-06-28 | Deletes new files created in the Desktop folder (shortcuts...) after updates
  1.0.0   | 2020-06-28 | The script can update the software and the system
+
+## License
+
+Released under the [MIT license](LICENSE).

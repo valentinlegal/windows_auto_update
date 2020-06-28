@@ -1,9 +1,6 @@
-'''
-Windows Auto Update script
-
-VERSION: 1.2.0
-AUTHOR: Valentin Le Gal
-'''
+# Windows Auto Update script
+# VERSION: 1.2.0
+# AUTHOR: Valentin Le Gal
 
 import os, shutil
 
