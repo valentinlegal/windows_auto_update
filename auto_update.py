@@ -1,13 +1,14 @@
 # Windows Auto Update script
-# VERSION: 1.2.0
+# VERSION: 1.2.1
 # AUTHOR: Valentin Le Gal
 
 import os, shutil
 
-desktop_path = "C:\\Users\\Valentin\\Desktop"
+
+desktop_path = os.path.join(os.path.join(os.environ["USERPROFILE"]), "Desktop")
 
 # Create a Windows restore point
-os.system("powershell.exe Checkpoint-Computer -Description \"AutoUpdate\" -RestorePointType \"MODIFY_SETTINGS\"")
+os.system("powershell.exe Checkpoint-Computer -Description \"AutoUpdate\" -RestorePointType \"APPLICATION_INSTALL\"")
 
 # Saves existing files on Desktop folder
 existing_files = []
@@ -21,14 +22,23 @@ os.system("choco upgrade all -y")
 # Check if there are new files on Desktop folder
 for item in os.listdir(desktop_path):
 	if not item in existing_files:
+		path = os.path.join(desktop_path, item)
+		
 		# Delete these files
 		try:
-			if os.path.isfile(desktop_path + "\\" + item):
-				os.remove(desktop_path + "\\" + item)
-			elif os.path.isdir(desktop_path + "\\" + item):
-				shutil.rmtree(desktop_path + "\\" + item)
-		except Exception as e:
-			print("[ERROR] Delete files: " + e)
+			if os.path.exists(path):
+				if os.path.isdir(path):
+					if os.path.islink(path):
+						os.unlink(path)
+					else:
+						shutil.rmtree(path)
+				else:
+					if os.path.islink(path):
+						os.unlink(path)
+					else:
+						os.remove(path)
+		except Exception as error:
+			print("[ERROR] Delete files: " + error)
 
 # Updates Windows with PSWindowsUpdate
 os.system("powershell.exe Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unrestricted -Force")
