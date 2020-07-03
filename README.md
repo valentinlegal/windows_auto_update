@@ -27,7 +27,7 @@ Before executing the script you must follow these instructions:
 - Python 3 must be installed (with Chocolatey if possible)
 - The following Python modules must be installed:
     - `pytest-shutil`
-- The _Windows Restore Point_ feature must be enabled for your **C:** drive
+- The _Windows Restore Point_ feature must be enabled for your `C:` drive
 - Create a Windows shortcut with the target: `powershell.exe python C:\PATH\TO\THE\SCRIPT\auto_update.py`
 - Make the shortcut executable with administrator rights
 
