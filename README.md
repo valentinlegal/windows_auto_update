@@ -39,6 +39,7 @@ Then to run the script:
 
  Version |    Date    | Description
 ---------|------------|-------------
+ 1.3.0   | 2020-07-06 | Converts the program to OOP
  1.2.1   | 2020-06-29 | Changes restore point type, fixes removal of shortcuts and automatically detects the Desktop folder
  1.2.0   | 2020-06-28 | Creates a Windows restore point before updating
  1.1.0   | 2020-06-28 | Deletes new files created in the Desktop folder (shortcuts...) after updates
