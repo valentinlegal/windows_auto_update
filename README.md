@@ -27,8 +27,7 @@ Before executing the script you must follow these instructions:
 - Python 3 must be installed (with Chocolatey if possible)
 - The following Python modules must be installed:
     - `pytest-shutil`
-- In the `auto_update.py` file:
-    - Change the `desktop_path` variable (the path to your Desktop folder) on line 7
+- The _Windows Restore Point_ feature must be enabled for your `C:` drive
 - Create a Windows shortcut with the target: `powershell.exe python C:\PATH\TO\THE\SCRIPT\auto_update.py`
 - Make the shortcut executable with administrator rights
 
@@ -40,6 +39,8 @@ Then to run the script:
 
  Version |    Date    | Description
 ---------|------------|-------------
+ 1.3.0   | 2020-07-06 | Converts the program to OOP
+ 1.2.1   | 2020-06-29 | Changes restore point type, fixes removal of shortcuts and automatically detects the Desktop folder
  1.2.0   | 2020-06-28 | Creates a Windows restore point before updating
  1.1.0   | 2020-06-28 | Deletes new files created in the Desktop folder (shortcuts...) after updates
  1.0.0   | 2020-06-28 | The script can update the software and the system
